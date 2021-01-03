@@ -1,9 +1,11 @@
 import React from 'react'
 
+import { H2 } from 'components/atoms/headings'
+
 const ComingSoon = () => {
   return (
     <div>
-      <h2>&gt; Comitting changes...</h2>
+      <H2>&gt; Comitting changes...</H2>
       <p>Building a new visual experience</p>
     </div>
   )
