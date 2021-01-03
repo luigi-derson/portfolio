@@ -3,7 +3,7 @@ const base = 16
 
 /* Functions */
 const pxToRem = n => `${n / base}rem`
-const listToRem = v => pxToRem(v)
+const listToRem = v => (v ? pxToRem(v) : v)
 
 // Spaces
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512].map(listToRem)
@@ -32,6 +32,7 @@ export const colors = {
   red: '#f50a14',
   black: '#000',
   white: '#fff',
+  green: '#32cd32',
 }
 
 colors.primary = colors.blue

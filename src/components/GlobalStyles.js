@@ -31,15 +31,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* Set system default dark theme configuration */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: ${({ theme }) => theme.colors.black};
-    color: ${({ theme }) => theme.colors.white};
-  }
-}
-
-
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
@@ -243,6 +234,22 @@ iframe {
 
 [hidden] {
   display: none !important;
+}
+
+/* Set system default dark theme configuration */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: ${({ theme }) => theme.colors.black};
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  a {
+  color: ${({ theme }) => theme.colors.white};
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.green};
+  }
+}
 }
 
 `

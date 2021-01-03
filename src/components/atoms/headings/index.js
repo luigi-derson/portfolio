@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { color } from 'styled-system'
 
 const headings = {}
 
@@ -14,6 +15,7 @@ tags.forEach((element, index) => {
     font-weight: 700;
     line-height: ${({ theme }) => theme.lineHeights.heading};
     font-size: ${1 * max}rem;
+    ${color}
   `
 })
 
