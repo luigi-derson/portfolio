@@ -8,6 +8,7 @@ import { Box, FlexBox } from 'components/atoms/box'
 import logo from 'assets/luigi-derson_logo.svg'
 import bgimage from 'assets/pawel-czerwinski-GHLapgsw0dg-unsplash.jpg'
 import Text from 'components/atoms/text'
+import Paragraph from 'components/atoms/paragraph'
 
 const FOOTER_HEIGHT = `${80 / 16}em`
 
@@ -33,11 +34,13 @@ const ComingSoon = () => {
           alignItems="center"
           height="100%"
         >
-          <Box mb={4}>
+          <Box my={4}>
             <img height="60px" src={logo} alt="Luigi Derson Logo" />
           </Box>
-          <H2 color="green">&gt; Comitting changes...</H2>
-          <p>Building a new visual experience</p>
+          <H2 color="green" fontFamily="mono" mb="4">
+            &gt; Comitting changes...
+          </H2>
+          <Paragraph>Building a new visual experience</Paragraph>
         </FlexBox>
       </Section>
       <Footer
@@ -54,12 +57,12 @@ const ComingSoon = () => {
           </li>
           <li>
             <a href="http://www.luigiderson.dev">
-              <MarkGithubIcon size={24} color="green" />
+              <MarkGithubIcon size={23} color="green" />
             </a>
           </li>
         </IconList>
 
-        <Text display="block" fontSize="sm">
+        <Text display="block" fontSize="xs">
           Background by{' '}
           <a href="https://unsplash.com/@pawel_czerwinski">Paweł Czerwiński</a>
         </Text>

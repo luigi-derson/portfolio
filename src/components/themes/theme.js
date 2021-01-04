@@ -11,11 +11,22 @@ const space = [0, 4, 8, 16, 32, 64, 128, 256, 512].map(listToRem)
 //  Breakpoints
 const breakpoints = [0, 576, 768, 992, 1200, 1400]
 
+// Font families
+const fonts = {
+  base:
+    '-apple-system, BlinkMacSystemFont, "Work Sans", "Segoe UI", Helvetica, Arial, "Roboto", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  mono:
+    'SFMono-Regular, Consolas, "Roboto Mono", Menlo, "Ubuntu Mono", monospace',
+  display:
+    'Raleway, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans", sans-serif',
+}
+
 // Font sizes
-const fontSizes = [14, 16, 20, 32, 48].map(listToRem)
-fontSizes.body = fontSizes[1]
-fontSizes.sm = fontSizes[0]
-fontSizes.lg = fontSizes[2]
+const fontSizes = [12, 14, 16, 20, 32, 48].map(listToRem)
+fontSizes.xs = fontSizes[0]
+fontSizes.sm = fontSizes[1]
+fontSizes.body = fontSizes[2]
+fontSizes.lg = fontSizes[3]
 
 // Font weights
 const fontWeights = [400, 600]
@@ -43,6 +54,7 @@ colors.fg = colors.black
 colors.bg = colors.white
 
 const theme = {
+  fonts,
   colors,
   space,
   breakpoints,

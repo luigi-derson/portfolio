@@ -17,9 +17,7 @@ html,
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: ${({ theme }) => theme.fonts.base};
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: ${({ theme }) => theme.colors.bg};
@@ -101,13 +99,39 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace;
+  font-family: ${({ theme }) => theme.fonts.mono};
   font-size: 1mm;
   unicode-bidi: bidi-override;
 }
 
 figure {
   margin: 0 0 1rem;
+}
+
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  overflow: auto;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+code {
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+  color: ${({ theme }) => theme.colors.green};
+  word-wrap: break-word;
+
+  // Streamline the style when inside anchors to avoid broken underline and more
+  a > & {
+    color: inherit;
+  }
 }
 
 
