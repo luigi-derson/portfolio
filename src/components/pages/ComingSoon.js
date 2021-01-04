@@ -62,7 +62,7 @@ const ComingSoon = () => {
           </li>
         </IconList>
 
-        <Text display="block" fontSize="xs">
+        <Text display="block" fontSize="xs" mb={1}>
           Background by{' '}
           <a href="https://unsplash.com/@pawel_czerwinski">Paweł Czerwiński</a>
         </Text>
