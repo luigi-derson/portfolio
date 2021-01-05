@@ -4,7 +4,7 @@ const glob = require(`glob`)
 
 const matches = glob.sync(`src/assets/**/*.{png,jpg,jpeg}`)
 const MAX_WIDTH = 1920
-const QUALITY = 70
+const QUALITY = 85
 
 Promise.all(
   matches.map(async match => {

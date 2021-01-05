@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { color, typography, compose, space } from 'styled-system'
+import shouldForwardProp from '@styled-system/should-forward-prop'
 
 const headings = {}
 
@@ -9,7 +10,9 @@ tags.forEach((element, index) => {
   const dec = index * 0.25
   const max = 2.5 - dec
 
-  headings[element.toUpperCase()] = styled(element)`
+  headings[element.toUpperCase()] = styled(element).withConfig({
+    shouldForwardProp,
+  })`
     margin-top: 0;
     margin-bottom: 0.5rem;
     font-weight: 700;

@@ -7,7 +7,7 @@ import ComingSoon from 'components/pages/ComingSoon'
 
 function App() {
   return (
-    <ThemeProvider theme={light}>
+    <ThemeProvider theme={dark}>
       <GlobalStyles />
       <ComingSoon />
     </ThemeProvider>

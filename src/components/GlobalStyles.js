@@ -79,11 +79,15 @@ strong {
 }
 
 a {
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.fg};
   text-decoration: none;
 
+  &:visited {
+    color: inherit;
+  }
+
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.green};
   }
 }
 
