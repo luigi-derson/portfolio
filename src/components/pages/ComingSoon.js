@@ -6,7 +6,7 @@ import { H2 } from 'components/atoms/headings'
 import { Box, FlexBox } from 'components/atoms/box'
 
 import logo from 'assets/luigi-derson_logo.svg'
-import bgimage from 'assets/pawel-czerwinski-GHLapgsw0dg-unsplash.jpg'
+import bgimage from 'assets/pawel-czerwinski-GHLapgsw0dg-unsplash-optimized.jpg'
 import Text from 'components/atoms/text'
 import Paragraph from 'components/atoms/paragraph'
 
