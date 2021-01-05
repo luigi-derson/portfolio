@@ -37,7 +37,7 @@ const ComingSoon = () => {
           <Box my={4}>
             <img height="60px" src={logo} alt="Luigi Derson Logo" />
           </Box>
-          <H2 color="green" fontFamily="mono" fontWeight="body" mb="4">
+          <H2 color="green" fontFamily="mono" fontWeight="regular" mb="4">
             &gt; Comitting changes...
           </H2>
           <Paragraph>Building a new visual experience</Paragraph>

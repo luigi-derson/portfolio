@@ -29,8 +29,9 @@ fontSizes.body = fontSizes[2]
 fontSizes.lg = fontSizes[3]
 
 // Font weights
-const fontWeights = [400, 600]
-fontWeights.body = fontWeights[0]
+const fontWeights = [400, 700]
+fontWeights.regular = fontWeights[0]
+fontWeights.bold = fontWeights[1]
 
 // Line heights
 const lineHeights = [1.2, 1.5, 2]
