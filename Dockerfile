@@ -20,6 +20,6 @@ FROM nginx:stable-alpine
 COPY --from=build /src/build /usr/share/nginx/html
 COPY ./nginx /etc/nginx/conf.d
 
-EXPOSE 80
+EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]

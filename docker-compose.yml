@@ -3,7 +3,25 @@ services:
   app:
     container_name: app
     image: luigiderson/portfolio
+    restart: unless-stopped
     ports:
-      - '3000:80'
+      - '80:80'
+      - '443:443'
     environment:
       NODE_ENV: production
+    volumes:
+      - app:/usr/share/nginx/html
+      - certbot-etc:/etc/letsencrypt
+  certbot:
+    depends_on:
+      - app
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - app:/var/www/html
+      - certbot-etc:/etc/letsencrypt
+    command: certonly --webroot --webroot-path=/var/www/html --email luigi.prodesign@gmail.com --agree-tos --no-eff-email --force-renewal -d luigiderson.dev -d www.luigiderson.dev
+
+volumes:
+  app:
+  certbot-etc:
