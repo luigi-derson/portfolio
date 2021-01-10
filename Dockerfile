@@ -6,7 +6,7 @@ COPY yarn.lock package.json ./
 
 RUN yarn install --production --frozen-lockfile
 
-FROM node:lts-alpine as build
+FROM deps as build
 
 WORKDIR /src
 
