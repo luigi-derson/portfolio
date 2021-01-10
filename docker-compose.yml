@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  app:
+    container_name: app
+    image: luigiderson/portfolio
+    ports:
+      - '3000:80'
+    environment:
+      NODE_ENV: production
