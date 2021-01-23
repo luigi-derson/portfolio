@@ -51,12 +51,12 @@ const ComingSoon = () => {
       >
         <IconList as="ul" justifyContent="center" alignItems="center">
           <li>
-            <a href="http://www.luigiderson.dev">
+            <a href="mailto:luigi.prodesign@gmail.com">
               <MailIcon size={24} color="green" />
             </a>
           </li>
           <li>
-            <a href="http://www.luigiderson.dev">
+            <a href="https://github.com/luigi-derson">
               <MarkGithubIcon size={23} color="green" />
             </a>
           </li>
