@@ -5,24 +5,27 @@
   "dependencies": {
     "@primer/styled-octicons": "^11.2.0",
     "@styled-system/should-forward-prop": "^5.1.5",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "fs-extra": "^9.0.1",
-    "glob": "^7.1.6",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "sharp": "^0.27.0",
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^2.26.1",
+    "gatsby-image": "^2.11.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-sharp": "^2.14.1",
+    "gatsby-plugin-styled-components": "^3.10.0",
+    "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-transformer-sharp": "^2.12.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "styled-components": "^5.2.1",
-    "styled-system": "^5.1.5",
-    "web-vitals": "^0.2.4"
+    "styled-system": "^5.1.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "react-test-renderer": "^17.0.1"
+    "prettier": "2.2.1"
   }
 }

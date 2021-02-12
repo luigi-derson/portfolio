@@ -1,18 +1,34 @@
 import React from 'react'
 import styled from 'styled-components'
 import { MarkGithubIcon, MailIcon } from '@primer/styled-octicons'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-import { H2 } from 'components/atoms/headings'
-import { Box, FlexBox } from 'components/atoms/box'
+import { H2 } from '@components/atoms/headings'
+import { Box, FlexBox } from '@components/atoms/box'
 
-import logo from 'assets/luigi-derson_logo.svg'
-import bgimage from 'assets/pawel-czerwinski-GHLapgsw0dg-unsplash-optimized.jpg'
-import Text from 'components/atoms/text'
-import Paragraph from 'components/atoms/paragraph'
+import logo from '@src/images/luigi-derson_logo.svg'
+
+import Text from '@components/atoms/text'
+import Paragraph from '@components/atoms/paragraph'
 
 const FOOTER_HEIGHT = `${80 / 16}em`
 
 const ComingSoon = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(
+        relativePath: { eq: "pawel-czerwinski-GHLapgsw0dg-unsplash.jpg" }
+      ) {
+        childImageSharp {
+          fixed(width: 3000) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <>
       <Box
@@ -25,7 +41,12 @@ const ComingSoon = () => {
         bg="black"
         zIndex="-1"
       >
-        <BgImg src={bgimage} />
+        <Img
+          fixed={data.placeholderImage.childImageSharp.fixed}
+          objectFit="cover"
+          objectPosition="50% 50%"
+          alt="Fancy background"
+        />
       </Box>
       <Section>
         <FlexBox
