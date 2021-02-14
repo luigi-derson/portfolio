@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { MarkGithubIcon, MailIcon } from '@primer/styled-octicons'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 import { H2 } from '@components/atoms/headings'
 import { Box, FlexBox } from '@components/atoms/box'
@@ -12,42 +13,38 @@ import logo from '@src/images/luigi-derson_logo.svg'
 import Text from '@components/atoms/text'
 import Paragraph from '@components/atoms/paragraph'
 
-const FOOTER_HEIGHT = `${80 / 16}em`
-
-const ComingSoon = () => {
+const PageBackground = ({ children, className }) => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(
+      desktop: file(
         relativePath: { eq: "pawel-czerwinski-GHLapgsw0dg-unsplash.jpg" }
       ) {
         childImageSharp {
-          fixed(width: 3000) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
     }
   `)
 
+  const imgData = data.desktop.childImageSharp.fluid
+
   return (
-    <>
-      <Box
-        width={1}
-        height="100%"
-        position="absolute"
-        pos="0"
-        overflow="hidden"
-        textAlign="center"
-        bg="black"
-        zIndex="-1"
-      >
-        <Img
-          fixed={data.placeholderImage.childImageSharp.fixed}
-          objectFit="cover"
-          objectPosition="50% 50%"
-          alt="Fancy background"
-        />
-      </Box>
+    <BackgroundImage
+      className={className}
+      Tag="main"
+      fluid={imgData}
+      backgroundColor="#000"
+    >
+      {children}
+    </BackgroundImage>
+  )
+}
+
+const ComingSoon = () => {
+  return (
+    <StyledPageBackground>
       <Section>
         <FlexBox
           flexDirection="column"
@@ -64,11 +61,12 @@ const ComingSoon = () => {
           <Paragraph>Building a new visual experience</Paragraph>
         </FlexBox>
       </Section>
-      <Footer
+      <Box
         as="footer"
         textAlign="center"
         flexDirection="column"
         justifyContent="space-around"
+        py="4"
       >
         <IconList as="ul" justifyContent="center" alignItems="center">
           <li>
@@ -82,47 +80,55 @@ const ComingSoon = () => {
             </a>
           </li>
         </IconList>
-
-        <Text display="block" fontSize="xs" mb={1}>
-          Background by{' '}
-          <a
-            href="https://unsplash.com/@pawel_czerwinski"
-            target="_blank"
-            rel="noreferrer norel"
-          >
-            Paweł Czerwiński
-          </a>
-        </Text>
-      </Footer>
-    </>
+      </Box>
+      <Text
+        display="block"
+        position="absolute"
+        py="3"
+        right="4"
+        bottom="0"
+        fontSize="xs"
+        mb={1}
+      >
+        Background by{' '}
+        <a
+          href="https://unsplash.com/@pawel_czerwinski"
+          target="_blank"
+          rel="noreferrer norel"
+        >
+          Paweł Czerwiński
+        </a>
+      </Text>
+    </StyledPageBackground>
   )
 }
 
 export default ComingSoon
 
 const Section = styled.section`
-  height: calc(100vh - ${FOOTER_HEIGHT});
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-`
-
-const Footer = styled(FlexBox)`
-  height: ${FOOTER_HEIGHT};
+  flex-grow: 2;
 `
 
 const IconList = styled(FlexBox)`
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin-bottom: 0;
+
   & > li {
     padding: 0 ${({ theme }) => theme.space[3]};
   }
 `
 
-const BgImg = styled.img`
-  width: 100%;
+const StyledPageBackground = styled(PageBackground)`
   height: 100%;
-  object-fit: cover;
-  filter: opacity(0.6);
+  display: flex;
+  flex-direction: column;
+
+  &::before,
+  &::after {
+    /* filter: blur(1px); */
+  }
 `
