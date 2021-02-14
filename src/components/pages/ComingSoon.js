@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { MarkGithubIcon, MailIcon } from '@primer/styled-octicons'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 
 import { H2 } from '@components/atoms/headings'
@@ -30,11 +29,16 @@ const PageBackground = ({ children, className }) => {
 
   const imgData = data.desktop.childImageSharp.fluid
 
+  const backgroundFluidImageStack = [
+    `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)`,
+    imgData,
+  ]
+
   return (
     <BackgroundImage
       className={className}
       Tag="main"
-      fluid={imgData}
+      fluid={backgroundFluidImageStack}
       backgroundColor="#000"
     >
       {children}
@@ -55,7 +59,13 @@ const ComingSoon = () => {
           <Box my={4}>
             <img height="60px" src={logo} alt="Luigi Derson Logo" />
           </Box>
-          <H2 color="green" fontFamily="mono" fontWeight="regular" mb="4">
+          <H2
+            color="green"
+            fontSize={[3, 3, 4, 4]}
+            fontFamily="mono"
+            fontWeight="regular"
+            mb="4"
+          >
             &gt; Comitting changes...
           </H2>
           <Paragraph>Building a new visual experience</Paragraph>
@@ -66,7 +76,7 @@ const ComingSoon = () => {
         textAlign="center"
         flexDirection="column"
         justifyContent="space-around"
-        py="4"
+        py={[1, 2, 3]}
       >
         <IconList as="ul" justifyContent="center" alignItems="center">
           <li>
@@ -81,15 +91,7 @@ const ComingSoon = () => {
           </li>
         </IconList>
       </Box>
-      <Text
-        display="block"
-        position="absolute"
-        py="3"
-        right="4"
-        bottom="0"
-        fontSize="xs"
-        mb={1}
-      >
+      <Text display="block" textAlign="right" fontSize="xs" py="2" pr="3">
         Background by{' '}
         <a
           href="https://unsplash.com/@pawel_czerwinski"
@@ -108,6 +110,7 @@ export default ComingSoon
 const Section = styled.section`
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1rem;
   text-align: center;
   flex-grow: 2;
 `
