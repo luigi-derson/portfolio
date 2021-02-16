@@ -80,12 +80,22 @@ const ComingSoon = () => {
       >
         <IconList as="ul" justifyContent="center" alignItems="center">
           <li>
-            <a href="mailto:luigi.prodesign@gmail.com">
+            <a
+              href="mailto:luigi.prodesign@gmail.com"
+              target="_blank"
+              rel="noreferrer norel"
+              title="Send me an email"
+            >
               <MailIcon size={24} color="green" />
             </a>
           </li>
           <li>
-            <a href="https://github.com/luigi-derson">
+            <a
+              href="https://github.com/luigi-derson"
+              target="_blank"
+              rel="noreferrer norel"
+              title="Check my github profile"
+            >
               <MarkGithubIcon size={23} color="green" />
             </a>
           </li>
@@ -97,6 +107,7 @@ const ComingSoon = () => {
           href="https://unsplash.com/@pawel_czerwinski"
           target="_blank"
           rel="noreferrer norel"
+          title="Pawel Czerwinski unsplash profile"
         >
           Paweł Czerwiński
         </a>
