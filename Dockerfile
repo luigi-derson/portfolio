@@ -1,10 +1,10 @@
-FROM node:lts-alpine as deps
+FROM node:current as deps
 
 WORKDIR /src
 
-COPY yarn.lock package.json ./
+COPY package-lock.json package.json ./
 
-RUN yarn install --production --frozen-lockfile
+RUN npm install
 
 FROM deps as build
 
@@ -13,11 +13,12 @@ WORKDIR /src
 COPY . .
 COPY --from=deps /src .
 
-RUN yarn build
+ENV PATH node_modules/.bin:$PATH
+RUN npm run build
 
 FROM nginx:stable-alpine
 
-COPY --from=build /src/build /usr/share/nginx/html
+COPY --from=build /src/public /usr/share/nginx/html
 COPY ./nginx /etc/nginx/conf.d
 
 EXPOSE 80 443

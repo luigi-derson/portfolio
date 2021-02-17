@@ -13,8 +13,8 @@ module.exports = {
     url: `https://www.luigiderson.com`,
     image: {
       src: `/images/luigi-portrait.jpg`,
-      width: 300,
-      height: 300,
+      width: 500,
+      height: 500,
     },
     keywords: [
       'Front End Developer',
