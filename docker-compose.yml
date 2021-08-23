@@ -20,7 +20,7 @@ services:
     volumes:
       - app:/var/www/html
       - certbot-etc:/etc/letsencrypt
-    command: certonly --webroot --webroot-path=/var/www/html --email luigi.prodesign@gmail.com --agree-tos --no-eff-email --force-renewal -d luigiderson.dev -d www.luigiderson.dev
+    command: certonly --webroot --webroot-path=/var/www/html --email luigi.prodesign@gmail.com --agree-tos --no-eff-email --keep-until-expiring -d luigiderson.dev -d www.luigiderson.dev
 
 volumes:
   app:
