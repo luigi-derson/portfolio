@@ -106,7 +106,7 @@ const ComingSoon = () => {
               rel="noreferrer norel"
               title="Check my Linkedin profile"
             >
-              <MarkGithubIcon size={23} color="green" />
+              <PeopleIcon size={23} color="green" />
             </a>
           </li>
         </IconList>
