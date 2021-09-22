@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MarkGithubIcon, MailIcon } from '@primer/styled-octicons'
+import { MarkGithubIcon, MailIcon, PeopleIcon } from '@primer/styled-octicons'
 import { useStaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
@@ -95,6 +95,16 @@ const ComingSoon = () => {
               target="_blank"
               rel="noreferrer norel"
               title="Check my github profile"
+            >
+              <MarkGithubIcon size={23} color="green" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/luigi-sanchez-731b72182/"
+              target="_blank"
+              rel="noreferrer norel"
+              title="Check my Linkedin profile"
             >
               <MarkGithubIcon size={23} color="green" />
             </a>
