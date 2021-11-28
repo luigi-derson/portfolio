@@ -21,12 +21,6 @@ Hey everyone, I'm Luigi Sanchez. This will be my porfolio website (SPA) built wi
 - [Cube rotation](https://www.pinterest.es/pin/142215300716710341/)
 - [Waves](https://www.pinterest.es/pin/711779916093646577/)
 
-#### Project stages
-
-- [ ] Design
-- [ ] Development
-- [ ] Deploy
-
 #### Design tools
 
 - Figma
@@ -35,8 +29,4 @@ Hey everyone, I'm Luigi Sanchez. This will be my porfolio website (SPA) built wi
 
 - Styled Components
 - Styled System
-- Animation Library: Spring, Anime.js, GreenSock.js
-
-#### Development Process
-
-- [ ] Use Test Driven Development
+- Animation Library: Framer Motion

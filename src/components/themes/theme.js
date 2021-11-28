@@ -9,7 +9,7 @@ const listToRem = v => (v ? pxToRem(v) : v)
 const space = [0, 4, 8, 16, 32, 64, 128, 256, 512].map(listToRem)
 
 //  Breakpoints
-const breakpoints = [0, 576, 768, 992, 1200, 1400]
+const breakpoints = ['0px', '576px', '768px', '992px', '1200px', '1400px']
 
 // Font families
 const fonts = {
@@ -22,7 +22,7 @@ const fonts = {
 }
 
 // Font sizes
-const fontSizes = [12, 14, 16, 20, 32, 48].map(listToRem)
+const fontSizes = [12, 14, 16, 24, 32, 48].map(listToRem)
 fontSizes.xs = fontSizes[0]
 fontSizes.sm = fontSizes[1]
 fontSizes.body = fontSizes[2]

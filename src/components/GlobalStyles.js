@@ -9,9 +9,10 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
 }
 
-body,
 html,
-#root {
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
   height: 100%;
 }
 
