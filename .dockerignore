@@ -1,8 +1,0 @@
-.cache/
-public/
-node_modules/
-build/
-.gitignore
-.git
-.dockerignore
-docker-compose.yml
