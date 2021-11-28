@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { MarkGithubIcon, MailIcon, PeopleIcon } from '@primer/styled-octicons'
 import { useStaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
 
 import { H2 } from '@components/atoms/headings'
 import { Box, FlexBox } from '@components/atoms/box'
@@ -30,19 +29,19 @@ const PageBackground = ({ children, className }) => {
   const imgData = data.desktop.childImageSharp.fluid
 
   const backgroundFluidImageStack = [
+    `url(${imgData.srcWebp})`,
     `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)`,
-    imgData,
   ]
 
   return (
-    <BackgroundImage
+    <div
       className={className}
-      Tag="main"
-      fluid={backgroundFluidImageStack}
-      backgroundColor="#000"
+      style={{
+        backgroundImage: backgroundFluidImageStack.join(','),
+      }}
     >
       {children}
-    </BackgroundImage>
+    </div>
   )
 }
 
@@ -150,9 +149,5 @@ const StyledPageBackground = styled(PageBackground)`
   height: 100%;
   display: flex;
   flex-direction: column;
-
-  &::before,
-  &::after {
-    /* filter: blur(1px); */
-  }
+  background-position: center;
 `
