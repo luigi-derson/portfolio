@@ -12,11 +12,10 @@ exports.createPages = async ({ actions }) => {
 
   if (process.env.MAINTENANCE_MODE) {
     createRedirect({
-      fromPath: `/*`,
+      fromPath: `/`,
       toPath: `/coming-soon`,
       isPermanent: true,
-      ignoreCase: true,
-      statusCode: 302,
+      redirectInBrowser: true,
     })
   }
 }
