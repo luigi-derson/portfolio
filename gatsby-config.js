@@ -38,7 +38,7 @@ module.exports = {
           '@templates': 'src/templates',
           '@content': 'src/content',
         },
-        extensions: ['js'],
+        extensions: ['js', 'tsx', 'ts', 'jsx'],
       },
     },
     {
