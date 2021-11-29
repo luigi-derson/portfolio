@@ -10,7 +10,7 @@ exports.onCreateBabelConfig = ({ actions }) => {
 exports.createPages = async ({ actions }) => {
   const { createRedirect } = actions
 
-  if (process.env.MAITENANCE_MODE) {
+  if (process.env.MAINTENANCE_MODE) {
     createRedirect({
       fromPath: `/*`,
       toPath: `/coming-soon`,
