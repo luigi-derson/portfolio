@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/inter": "^4.5.1",
+    "@fontsource/poppins": "^4.5.0",
+    "@fontsource/roboto-mono": "^4.5.0",
     "@primer/styled-octicons": "^16.1.0",
-    "@styled-system/should-forward-prop": "^5.1.5",
+    "@types/react": "^17.0.37",
+    "@types/react-helmet": "^6.1.4",
+    "@types/styled-components": "^5.1.15",
+    "@types/styled-system": "^5.1.13",
+    "@xstyled/styled-components": "^3.1.2",
     "babel-plugin-styled-components": "^2.0.1",
     "gatsby": "^4.2.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
@@ -14,12 +21,10 @@
     "gatsby-plugin-styled-components": "^5.2.0",
     "gatsby-source-filesystem": "^4.2.0",
     "gatsby-transformer-sharp": "^4.2.0",
-    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "styled-components": "^5.3.3",
-    "styled-system": "^5.1.5"
+    "styled-components": "^5.3.3"
   },
   "scripts": {
     "build": "gatsby build",
