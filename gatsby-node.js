@@ -6,3 +6,17 @@ exports.onCreateBabelConfig = ({ actions }) => {
     },
   })
 }
+
+exports.createPages = async ({ actions }) => {
+  const { createRedirect } = actions
+
+  if (process.env.MAITENANCE_MODE) {
+    createRedirect({
+      fromPath: `/*`,
+      toPath: `/coming-soon`,
+      isPermanent: true,
+      ignoreCase: true,
+      statusCode: 302,
+    })
+  }
+}
