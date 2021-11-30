@@ -48,7 +48,13 @@ const ComingSoon = () => {
           h={1}
         >
           <x.div my={4}>
-            <x.img h={14} src={logoSVG} alt="Luigi Derson Logo" />
+            <x.img
+              h={14}
+              src={logoSVG}
+              height="56px"
+              width="56px"
+              alt="Luigi Derson Logo"
+            />
           </x.div>
           <Heading
             as="h2"
