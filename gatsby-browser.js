@@ -1,6 +1,6 @@
 exports.onClientEntry = () => {
   if (
-    process.env.MAINTENANCE_MODE &&
+    process.env.GATSBY_MAINTENANCE_MODE &&
     window.location.pathname !== '/coming-soon'
   ) {
     window.location = '/coming-soon'
@@ -8,7 +8,10 @@ exports.onClientEntry = () => {
 }
 
 exports.onRouteUpdate = ({ location }) => {
-  if (process.env.MAINTENANCE_MODE && location.pathname !== '/coming-soon') {
+  if (
+    process.env.GATSBY_MAINTENANCE_MODE &&
+    location.pathname !== '/coming-soon'
+  ) {
     location = '/maintenance'
   }
 }
