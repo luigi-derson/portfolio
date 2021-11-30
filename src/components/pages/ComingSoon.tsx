@@ -29,6 +29,8 @@ const ComingSoon = () => {
     `url(${imgData.srcWebp})`,
     `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)`,
   ]
+  // image background by @pawel_czerwinski
+
   return (
     <x.div
       backgroundImage={backgroundFluidImageStack.join(',')}
@@ -46,7 +48,7 @@ const ComingSoon = () => {
           h={1}
         >
           <x.div my={4}>
-            <x.img h={15} src={logoSVG} alt="Luigi Derson Logo" />
+            <x.img h={14} src={logoSVG} alt="Luigi Derson Logo" />
           </x.div>
           <Heading
             as="h2"
@@ -68,7 +70,7 @@ const ComingSoon = () => {
         textAlign="center"
         flexDirection="column"
         justifyContent="space-around"
-        py={[1, 2, 3]}
+        py={{ _: 4, md: 6 }}
       >
         <x.ul
           display="flex"
@@ -108,17 +110,6 @@ const ComingSoon = () => {
           </li>
         </x.ul>
       </x.div>
-      <Text display="block" textAlign="right" fontSize="xs" py="2" pr="3">
-        Background by{' '}
-        <a
-          href="https://unsplash.com/@pawel_czerwinski"
-          target="_blank"
-          rel="noreferrer norel"
-          title="Pawel Czerwinski unsplash profile"
-        >
-          Paweł Czerwiński
-        </a>
-      </Text>
     </x.div>
   )
 }
