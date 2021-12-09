@@ -3,7 +3,7 @@ import Container from './Container'
 
 const NavBar = () => {
   return (
-    <x.header>
+    <x.header py={4}>
       <x.nav>
         <Container>
           <x.div display="flex" justifyContent="space-between">

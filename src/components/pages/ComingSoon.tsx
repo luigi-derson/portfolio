@@ -38,6 +38,8 @@ const ComingSoon = () => {
       display="flex"
       flexDirection="column"
       backgroundPosition="center"
+      backgroundRepeat="no-repeat"
+      backgroundSize="cover"
     >
       <Container textAlign="center" flexGrow={2}>
         <x.div
