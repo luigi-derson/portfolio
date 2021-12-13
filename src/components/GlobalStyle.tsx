@@ -11,6 +11,10 @@ body {
   font-family: sans;
   line-height: 1.4;
 }
+
+a {
+  color: dark-blue;
+}
 `
 
 export default GlobalStyles

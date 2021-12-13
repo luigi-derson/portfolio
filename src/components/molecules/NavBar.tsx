@@ -1,17 +1,34 @@
 import { x } from '@xstyled/styled-components'
 import Container from './Container'
+import { MarkGithubIcon, SunIcon } from '@primer/styled-octicons'
+import Logo from './Logo'
+
+export const HEADER_HEIGHT = 78
 
 const NavBar = () => {
   return (
-    <x.header py={4}>
-      <x.nav>
+    <x.header h={HEADER_HEIGHT} display="flex" alignItems="center">
+      <x.nav w={1}>
         <Container>
-          <x.div display="flex" justifyContent="space-between">
-            <x.div w={10} h={10} bg="gray-200" borderRadius="50%"></x.div>
+          <x.div
+            display="flex"
+            alignItems="center"
+            justifyContent="space-between"
+          >
+            <Logo iconOnly width={35} height={35} />
             <x.div display="flex" spaceX={4}>
-              <x.div w={10} h={10} bg="gray-200" borderRadius="50%"></x.div>
-              <x.div w={10} h={10} bg="gray-200" borderRadius="50%"></x.div>
-              <x.div w={10} h={10} bg="gray-200" borderRadius="50%"></x.div>
+              <x.div color="gray-300">
+                <SunIcon size="medium" verticalAlign="middle" />
+              </x.div>
+              <x.a
+                href="https://github.com/luigi-derson"
+                target="_blank"
+                rel="noreferrer norel"
+                title="Check my github profile"
+                color={{ hover: 'dark-red' }}
+              >
+                <MarkGithubIcon size="medium" verticalAlign="middle" />
+              </x.a>
             </x.div>
           </x.div>
         </Container>

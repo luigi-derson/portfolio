@@ -2,7 +2,7 @@ import { MarkGithubIcon, MailIcon, PeopleIcon } from '@primer/styled-octicons'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { Heading } from '@components/atoms/Heading'
-import logoSVG from '@src/images/luigi-derson_logo.svg'
+import logoSVG from '@src/images/luigi-derson-logo.svg'
 
 import { Text } from '@components/atoms/Text'
 import { x } from '@xstyled/styled-components'

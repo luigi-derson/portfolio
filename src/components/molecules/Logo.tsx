@@ -3,38 +3,41 @@ import { x } from '@xstyled/styled-components'
 interface LogoProps {
   light?: boolean
   white?: boolean
+  iconOnly?: boolean
+  width?: number
+  height?: number
 }
 
-export default function Logo({ light, white }: LogoProps) {
+export default function Logo({
+  light,
+  white,
+  iconOnly = false,
+  width = 364,
+  height = 126,
+}: LogoProps) {
+  const viewBox = iconOnly ? '0 0 85 126.4' : '0 0 364.7 126.4'
   return (
-    <x.div display="inline-block" w="140px" h="50px" position="relative">
-      <x.svg
-        id="logo"
-        h={1}
-        w={1}
-        position="absolute"
-        top="0"
-        bottom="0"
-        left="0"
-        right="0"
-        xmlns="http://www.w3.org/2000/svg"
-        width="364.7"
-        height="126.4"
-        viewBox="0 0 364.7 126.4"
-      >
-        <title>luigi-derson-color</title>
-        <path
-          id="luigi"
-          d="M60,121.9a43.63,43.63,0,0,1-39.7-3.8A43.75,43.75,0,0,1,0,81.2V0H20.2V81.2a23.59,23.59,0,0,0,35.1,20.6Z"
-          transform="translate(0 0)"
-          fill={light ? '#fff' : '#140a82'}
-        />
-        <path
-          id="derson"
-          d="M87.7,0V125H67.4V81.2A23.59,23.59,0,0,0,32.3,60.6L27.6,40.4a43.63,43.63,0,0,1,39.7,3.8V0Z"
-          transform="translate(0 0)"
-          fill={light ? '#fff' : '#f50a14'}
-        />
+    <x.svg
+      id="logo"
+      h={`${height}px`}
+      w={`${width}px`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={viewBox}
+    >
+      <title>luigi-derson-color</title>
+      <path
+        id="luigi"
+        d="M60,121.9a43.63,43.63,0,0,1-39.7-3.8A43.75,43.75,0,0,1,0,81.2V0H20.2V81.2a23.59,23.59,0,0,0,35.1,20.6Z"
+        transform="translate(0 0)"
+        fill={light ? '#fff' : '#140a82'}
+      />
+      <path
+        id="derson"
+        d="M87.7,0V125H67.4V81.2A23.59,23.59,0,0,0,32.3,60.6L27.6,40.4a43.63,43.63,0,0,1,39.7,3.8V0Z"
+        transform="translate(0 0)"
+        fill={light ? '#fff' : '#f50a14'}
+      />
+      {!iconOnly && (
         <g id="text" fill={white ? '#fff' : '#000'}>
           <path
             d="M118.3,44.7a3.1,3.1,0,0,0,1.3,2.7,5,5,0,0,0,3.2,1.1,15.73,15.73,0,0,0,4.9-1.1l1.8,8.7a20.75,20.75,0,0,1-8.5,2.1,12.34,12.34,0,0,1-13-12.9V.6h10.4V44.7Z"
@@ -81,7 +84,7 @@ export default function Logo({ light, white }: LogoProps) {
             transform="translate(0 0)"
           />
         </g>
-      </x.svg>
-    </x.div>
+      )}
+    </x.svg>
   )
 }

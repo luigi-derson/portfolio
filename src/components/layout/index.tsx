@@ -6,6 +6,7 @@ import NavBar from '@components/molecules/NavBar'
 import '@fontsource/poppins/600.css'
 import '@fontsource/inter/300.css'
 import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
 import '@fontsource/inter/700.css'
 import '@fontsource/roboto-mono/400.css'
 import '@fontsource/roboto-mono/600.css'
@@ -22,7 +23,7 @@ function App({ children, hideNavBar = false }: AppProps) {
       <GlobalStyle />
       <SEO />
       {!hideNavBar && <NavBar />}
-      <x.main h={1}>{children}</x.main>
+      <x.main>{children}</x.main>
     </ThemeProvider>
   )
 }
