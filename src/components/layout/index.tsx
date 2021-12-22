@@ -1,4 +1,9 @@
-import { ThemeProvider, Preflight, x } from '@xstyled/styled-components'
+import {
+  ThemeProvider,
+  Preflight,
+  x,
+  ColorModeProvider,
+} from '@xstyled/styled-components'
 import theme from '@components/themes'
 import GlobalStyle from '@components/GlobalStyle'
 import SEO from '@components/seo'
@@ -19,11 +24,13 @@ interface AppProps {
 function App({ children, hideNavBar = false }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
-      <Preflight />
-      <GlobalStyle />
-      <SEO />
-      {!hideNavBar && <NavBar />}
-      <x.main>{children}</x.main>
+      <ColorModeProvider>
+        <Preflight />
+        <GlobalStyle />
+        <SEO />
+        {!hideNavBar && <NavBar />}
+        <x.main>{children}</x.main>
+      </ColorModeProvider>
     </ThemeProvider>
   )
 }

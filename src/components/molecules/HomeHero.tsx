@@ -47,13 +47,7 @@ const options: Options = {
     },
     [BLOCKS.PARAGRAPH]: function HeroParagraph(_, children) {
       return (
-        <Text
-          as="p"
-          mt={8}
-          fontSize="xl"
-          color="true-gray-900-a90"
-          fontWeight={400}
-        >
+        <Text as="p" mt={8} fontSize="xl" fontWeight={400}>
           {children}
         </Text>
       )
@@ -76,7 +70,7 @@ const HomeHero = () => {
   return (
     <x.section>
       <Container>
-        <x.div py={10}>
+        <x.div py={10} maxW={680}>
           {data.contentfulSection.content &&
             renderRichText(data.contentfulSection.content, options)}
         </x.div>
