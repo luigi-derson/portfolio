@@ -21,14 +21,19 @@ const theme = {
     headings: th.color('true-gray-900'),
     background: th.color('gray-50'),
     links: th.color('primary'),
+    borders: th.color('true-gray-900'),
     modes: {
       dark: {
         text: th.color('gray-50-a70'),
         background: th.color('true-gray-900'),
         headings: th.color('gray-50'),
         links: th.color('indigo-400'),
+        borders: th.color('gray-50'),
       },
     },
+  },
+  borders: {
+    thin: '2px solid',
   },
 }
 

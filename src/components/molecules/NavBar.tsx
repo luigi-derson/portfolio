@@ -1,8 +1,9 @@
 import { useColorMode, x } from '@xstyled/styled-components'
 import Container from './Container'
-import { MarkGithubIcon, MoonIcon, SunIcon } from '@primer/styled-octicons'
+import { MarkGithubIcon } from '@primer/styled-octicons'
 import Logo from './Logo'
 import { useCallback } from 'react'
+import ColorSwitcher from './ColorSwitcher'
 
 export const HEADER_HEIGHT = 78
 
@@ -12,7 +13,13 @@ const NavBar = () => {
     setColorMode(colorMode === 'default' ? 'dark' : 'default')
   }, [colorMode, setColorMode])
   return (
-    <x.header h={HEADER_HEIGHT} display="flex" alignItems="center">
+    <x.header
+      h={HEADER_HEIGHT}
+      display="flex"
+      alignItems="center"
+      borderBottom="thin"
+      borderColor="borders"
+    >
       <x.nav w={1}>
         <Container>
           <x.div
@@ -27,27 +34,19 @@ const NavBar = () => {
               light={colorMode === 'dark'}
             />
             <x.div display="flex" spaceX={4}>
-              <x.a
-                href="https://github.com/luigi-derson"
-                target="_blank"
-                rel="noreferrer norel"
-                title="Check my github profile"
-              >
-                <MarkGithubIcon size="medium" verticalAlign="middle" />
-              </x.a>
-              <x.button
-                background="transparent"
-                type="button"
-                onClick={toggleColorMode}
-                color="links"
-                outline={{ focus: 'none' }}
-              >
-                {colorMode === 'default' ? (
-                  <MoonIcon size="medium" verticalAlign="middle" />
-                ) : (
-                  <SunIcon size="medium" verticalAlign="middle" />
-                )}
-              </x.button>
+              <x.div border="thin" borderColor="links">
+                <x.a
+                  href="https://github.com/luigi-derson"
+                  target="_blank"
+                  rel="noreferrer norel"
+                  title="Check my github profile"
+                  p={1}
+                  display="block"
+                >
+                  <MarkGithubIcon size="medium" verticalAlign="middle" />
+                </x.a>
+              </x.div>
+              <ColorSwitcher onChange={toggleColorMode} colorMode={colorMode} />
             </x.div>
           </x.div>
         </Container>
