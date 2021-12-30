@@ -1,17 +1,13 @@
-import { useColorMode, x } from '@xstyled/styled-components'
+import { x, useColorMode } from '@xstyled/styled-components'
 import Container from './Container'
 import { MarkGithubIcon } from '@primer/styled-octicons'
 import Logo from './Logo'
-import { useCallback } from 'react'
 import ColorSwitcher from './ColorSwitcher'
 
 export const HEADER_HEIGHT = 78
 
 const NavBar = () => {
-  const [colorMode, setColorMode] = useColorMode()
-  const toggleColorMode = useCallback(() => {
-    setColorMode(colorMode === 'default' ? 'dark' : 'default')
-  }, [colorMode, setColorMode])
+  const [colorMode] = useColorMode()
   return (
     <x.header
       h={HEADER_HEIGHT}
@@ -46,7 +42,7 @@ const NavBar = () => {
                   <MarkGithubIcon size="medium" verticalAlign="middle" />
                 </x.a>
               </x.div>
-              <ColorSwitcher onChange={toggleColorMode} colorMode={colorMode} />
+              <ColorSwitcher />
             </x.div>
           </x.div>
         </Container>

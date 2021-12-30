@@ -1,13 +1,16 @@
-import { x } from '@xstyled/styled-components'
+import { useCallback } from 'react'
+
+import { x, useColorMode } from '@xstyled/styled-components'
 import { MoonIcon, SunIcon } from '@primer/styled-octicons'
 
-interface ColorSwitcherProps {
-  onChange: () => void
-  colorMode: string | null
-}
+const ColorSwitcher = () => {
+  const [colorMode, setColorMode] = useColorMode()
+  const isDefaultMode = colorMode === 'default'
+  const toggleColorMode = useCallback(() => {
+    setColorMode(isDefaultMode ? 'dark' : 'default')
+  }, [colorMode, setColorMode])
+  const position = isDefaultMode ? { left: 0 } : { left: '50%' }
 
-const ColorSwitcher = ({ onChange, colorMode }: ColorSwitcherProps) => {
-  const position = colorMode === 'default' ? { left: 0 } : { left: '50%' }
   return (
     <x.label
       htmlFor="toggleColorMode"
@@ -32,7 +35,7 @@ const ColorSwitcher = ({ onChange, colorMode }: ColorSwitcherProps) => {
         <SunIcon size="medium" verticalAlign="middle" />
       </x.div>
       <x.input
-        onChange={onChange}
+        onChange={toggleColorMode}
         id="toggleColorMode"
         type="checkbox"
         display="none"

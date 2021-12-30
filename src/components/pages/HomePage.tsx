@@ -1,16 +1,25 @@
 import HomeHero from '@components/molecules/HomeHero'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useColorMode } from '@xstyled/styled-components'
 
 const HomePage = () => {
   const [colorMode] = useColorMode()
 
+  useEffect(() => {
+    const image = document.querySelector('.mesh-gradient-image')
+    if (colorMode === 'dark' && image) {
+      image.classList.add('mesh-gradient-image--dark')
+    } else {
+      image?.classList.remove('mesh-gradient-image--dark')
+    }
+  }, [colorMode])
+
   return (
     <React.Fragment>
       <HomeHero />
       <StaticImage
-        className={`mesh-gradient-image mesh-gradient-image--${colorMode}`}
+        className="mesh-gradient-image"
         src="../../images/mesh-gradient.png"
         alt="Mesh Gradient"
         layout="fullWidth"

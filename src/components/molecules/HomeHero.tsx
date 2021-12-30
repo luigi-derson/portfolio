@@ -47,7 +47,7 @@ const options: Options = {
     },
     [BLOCKS.PARAGRAPH]: function HeroParagraph(_, children) {
       return (
-        <Text as="p" mt={8} fontSize="xl" fontWeight={400}>
+        <Text as="p" mt={8} fontSize="xl">
           {children}
         </Text>
       )
