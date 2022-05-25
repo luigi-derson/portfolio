@@ -30,8 +30,12 @@ a {
   top: 0;
   left: 0;
   z-index: -1;
-  opacity: 0.85;
+  opacity: 0.65;
   transition: opacity 1000ms cubic-bezier(0.12, 0, 0.39, 0);
+}
+
+@media screen and (min-width: 768px) {
+  opacity: 0.85;
 }
 
 .mesh-gradient-image--dark {

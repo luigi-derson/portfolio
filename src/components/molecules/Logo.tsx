@@ -24,18 +24,18 @@ export default function Logo({
       xmlns="http://www.w3.org/2000/svg"
       viewBox={viewBox}
     >
-      <title>luigi-derson-color</title>
+      <title>luigi-derson-logo</title>
       <path
         id="luigi"
         d="M60,121.9a43.63,43.63,0,0,1-39.7-3.8A43.75,43.75,0,0,1,0,81.2V0H20.2V81.2a23.59,23.59,0,0,0,35.1,20.6Z"
         transform="translate(0 0)"
-        fill={light ? '#fff' : '#140a82'}
+        fill={light ? '#818cf8' : '#140a82'}
       />
       <path
         id="derson"
         d="M87.7,0V125H67.4V81.2A23.59,23.59,0,0,0,32.3,60.6L27.6,40.4a43.63,43.63,0,0,1,39.7,3.8V0Z"
         transform="translate(0 0)"
-        fill={light ? '#fff' : '#f50a14'}
+        fill={light ? '#f87171ff' : '#f50a14'}
       />
       {!iconOnly && (
         <g id="text" fill={white ? '#fff' : '#000'}>
