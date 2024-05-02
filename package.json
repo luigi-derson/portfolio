@@ -11,7 +11,7 @@
     "@types/react-helmet": "^6.1.4",
     "@types/styled-components": "^5.1.15",
     "@xstyled/styled-components": "^3.1.2",
-    "gatsby": "^4.2.0",
+    "gatsby": "4.24",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-gatsby-cloud": "^4.2.0",
     "gatsby-plugin-image": "^2.2.0",
