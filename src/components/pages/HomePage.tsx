@@ -1,7 +1,8 @@
-import HomeHero from '@components/molecules/HomeHero'
 import React, { useEffect } from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 import { useColorMode } from '@xstyled/styled-components'
+import HomeHero from '@components/molecules/HomeHero'
+import { Projects } from '@components/molecules/Projects'
 
 const HomePage = () => {
   const [colorMode] = useColorMode()
@@ -18,6 +19,7 @@ const HomePage = () => {
   return (
     <React.Fragment>
       <HomeHero />
+      <Projects />
       <StaticImage
         className="mesh-gradient-image"
         src="../../images/mesh-gradient.png"

@@ -21,7 +21,8 @@ interface AppProps {
   hideNavBar?: boolean
 }
 
-function App({ children, hideNavBar = false }: AppProps) {
+export const Layout = (props: AppProps) => {
+  const { children, hideNavBar } = props
   return (
     <ThemeProvider theme={theme}>
       <ColorModeProvider>
@@ -34,5 +35,3 @@ function App({ children, hideNavBar = false }: AppProps) {
     </ThemeProvider>
   )
 }
-
-export default App
