@@ -1,10 +1,12 @@
 import { Layout } from '@components/layout'
-import HomePage from '@components/pages/HomePage'
+import { Home } from '@components/pages'
 
-export default function Home() {
+const HomePage = () => {
   return (
     <Layout>
-      <HomePage />
+      <Home />
     </Layout>
   )
 }
+
+export default HomePage

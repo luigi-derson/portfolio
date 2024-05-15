@@ -1,10 +1,12 @@
 import { Layout } from '@components/layout'
-import ComingSoon from '@components/pages/ComingSoon'
+import { ComingSoon } from '@components/pages'
 
-export default function Home() {
+const ComingSoonPage = () => {
   return (
     <Layout hideNavBar>
       <ComingSoon />
     </Layout>
   )
 }
+
+export default ComingSoonPage

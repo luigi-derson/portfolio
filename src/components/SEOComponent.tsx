@@ -1,14 +1,14 @@
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-interface SEOProps {
-  description?: string
-  lang?: string
-  meta?: Array<{ name: string; content: string }>
-  title?: string
-  pathname?: string
-  image?: { src: string; width: number; height: number }
-}
+type SEOProps = Partial<{
+  description: string
+  lang: string
+  meta: Array<{ name: string; content: string }>
+  title: string
+  pathname: string
+  image: { src: string; width: number; height: number }
+}>
 
 const SEO = ({
   description = '',
@@ -39,9 +39,7 @@ const SEO = ({
 
   const metaDescription = description || site.siteMetadata.description
   const image = metaImage || site.siteMetadata.defaultImage
-
   const imageUrl = `${site.siteMetadata.siteUrl}${image.src}`
-
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   return (

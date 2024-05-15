@@ -1,7 +1,7 @@
 import { Heading } from '@components/atoms/Heading'
 import { x } from '@xstyled/styled-components'
 import { graphql, useStaticQuery } from 'gatsby'
-import Container from './Container'
+import { Container } from '../../../molecules/Container'
 import { BLOCKS } from '@contentful/rich-text-types'
 import { renderRichText } from 'gatsby-source-contentful/rich-text'
 import { Options } from '@contentful/rich-text-react-renderer'
@@ -55,7 +55,7 @@ const options: Options = {
   },
 }
 
-const HomeHero = () => {
+export const HeroSection = () => {
   const data = useStaticQuery(graphql`
     {
       contentfulSection(name: { eq: "Hero" }) {
@@ -78,5 +78,3 @@ const HomeHero = () => {
     </x.section>
   )
 }
-
-export default HomeHero

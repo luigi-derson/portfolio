@@ -4,12 +4,11 @@ interface ContainerProps extends SystemProps {
   children: React.ReactNode
 }
 
-const Container = ({ children, ...extra }: ContainerProps) => {
+export const Container = (props: ContainerProps) => {
+  const { children, ...extra } = props
   return (
     <x.div container mx="auto" px={4} {...extra}>
       {children}
     </x.div>
   )
 }
-
-export default Container

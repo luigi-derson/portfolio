@@ -1,8 +1,13 @@
-import { defaultTheme, generateHexAlphaVariants, th } from '@xstyled/system'
+import {
+  defaultTheme,
+  generateHexAlphaVariants,
+  th,
+  Theme,
+} from '@xstyled/system'
 
 const fallbackSansFonts = 'ui-sans-serif, system-ui, -apple-system, sans-serif'
 
-const theme = {
+export const theme = {
   ...defaultTheme,
   fonts: {
     display: `Poppins, ${fallbackSansFonts}`,
@@ -37,4 +42,4 @@ const theme = {
   },
 }
 
-export default theme
+export type MyTheme = typeof theme

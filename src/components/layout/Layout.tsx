@@ -4,9 +4,9 @@ import {
   x,
   ColorModeProvider,
 } from '@xstyled/styled-components'
-import theme from '@components/themes'
+import { theme } from '@themes'
 import GlobalStyle from '@components/GlobalStyle'
-import SEO from '@components/seo'
+import SEO from '@components/SEOComponent'
 import NavBar from '@components/molecules/NavBar'
 import '@fontsource/poppins/600.css'
 import '@fontsource/inter/300.css'

@@ -1,6 +1,7 @@
 import { x, useColorMode } from '@xstyled/styled-components'
-import Container from './Container'
 import { MarkGithubIcon } from '@primer/styled-octicons'
+
+import { Container } from './Container'
 import Logo from './Logo'
 import ColorSwitcher from './ColorSwitcher'
 

@@ -2,13 +2,13 @@ import { MarkGithubIcon, MailIcon, PeopleIcon } from '@primer/styled-octicons'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import { Heading } from '@components/atoms/Heading'
-import logoSVG from '@src/images/luigi-derson-logo.svg'
+import logoSVG from './assets/luigi-derson-logo.svg'
 
 import { Text } from '@components/atoms/Text'
 import { x } from '@xstyled/styled-components'
-import Container from '@components/molecules/Container'
+import { Container } from '@components/molecules/Container'
 
-const ComingSoon = () => {
+export const ComingSoon = () => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(
@@ -29,7 +29,6 @@ const ComingSoon = () => {
     `url(${imgData.srcWebp})`,
     `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)`,
   ]
-  // image background by @pawel_czerwinski
 
   return (
     <x.div
@@ -121,5 +120,3 @@ const ComingSoon = () => {
     </x.div>
   )
 }
-
-export default ComingSoon

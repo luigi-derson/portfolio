@@ -23,6 +23,7 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   /* Your site config here */
+  graphqlTypegen: true,
   siteMetadata: {
     title: `Luigi Derson Portfolio`,
     description: `Luigi Derson, Front End Developer and UI/UX Designer based in Manchester, UK.`,
@@ -51,6 +52,7 @@ module.exports = {
           '@atoms': 'src/components/atoms',
           '@molecules': 'src/components/molecules',
           '@organisms': 'src/components/organisms',
+          '@themes': 'src/themes',
           '@pages': 'src/pages',
           '@templates': 'src/templates',
           '@content': 'src/content',
@@ -62,7 +64,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/components/pages/coming-soon/assets/`,
       },
     },
     `gatsby-plugin-image`,
