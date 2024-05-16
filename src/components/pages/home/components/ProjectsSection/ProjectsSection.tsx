@@ -59,8 +59,9 @@ export const ProjectsSection = () => {
           <x.div
             display="flex"
             mt={4}
-            gap={{ _: 8, md: 4 }}
+            gap={8}
             flexDirection={{ _: 'column', md: 'row' }}
+            flexWrap="wrap"
           >
             {data.allContentfulProject.nodes.map(project => {
               let image: IGatsbyImageData | undefined
@@ -72,7 +73,7 @@ export const ProjectsSection = () => {
               }
               const Wrapper = firstImage?.url ? x.a : Fragment
               return (
-                <x.div key={project.id} w={{ _: '100%', md: '50%' }}>
+                <x.div key={project.id} flex={1}>
                   {image && (
                     <Wrapper
                       {...(firstImage?.url && {
