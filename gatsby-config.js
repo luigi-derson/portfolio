@@ -53,13 +53,6 @@ module.exports = {
         extensions: ['js', 'tsx', 'ts', 'jsx'],
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/components/pages/coming-soon/assets/`,
-      },
-    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -70,7 +63,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,

@@ -34,10 +34,6 @@ a {
   transition: opacity 1000ms cubic-bezier(0.12, 0, 0.39, 0);
 }
 
-@media screen and (min-width: 768px) {
-  opacity: 0.85;
-}
-
 .mesh-gradient-image--dark {
   transition: opacity 300ms cubic-bezier(0.12, 0, 0.39, 0);
   opacity: 0;
