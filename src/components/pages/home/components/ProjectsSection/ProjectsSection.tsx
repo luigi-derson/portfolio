@@ -56,7 +56,12 @@ export const ProjectsSection = () => {
               // @ts-ignore
               renderRichText(data.contentfulSection.content, rendererOptions)}
           </x.div>
-          <x.div display="flex" mt={4} gap={4}>
+          <x.div
+            display="flex"
+            mt={4}
+            gap={{ _: 8, md: 4 }}
+            flexDirection={{ _: 'column', md: 'row' }}
+          >
             {data.allContentfulProject.nodes.map(project => {
               let image: IGatsbyImageData | undefined
               const alt = project.images?.[0]?.title ?? project.title

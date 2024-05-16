@@ -1,15 +1,14 @@
 ### My portfolio
 
-Hey everyone, I'm Luigi Sanchez. This will be my porfolio website (SPA) built with react.js
+Hey everyone, I'm Luigi Sanchez. This is my portfolio website built with React, Gatsby and Contentful CMS.
 
 #### Inspiration
 
-- Design
-- Maths
+- Numbers
 - Patterns
 - Cats
-- Salsa (Music)
-- Simple
+- Less is more
+- Atomic design system
 
 #### Interested links
 
@@ -21,12 +20,10 @@ Hey everyone, I'm Luigi Sanchez. This will be my porfolio website (SPA) built wi
 - [Cube rotation](https://www.pinterest.es/pin/142215300716710341/)
 - [Waves](https://www.pinterest.es/pin/711779916093646577/)
 
-#### Design tools
-
-- Figma
-
-#### Development tools
+#### Tech stack
 
 - Styled Components
 - Styled System
 - Animation Library: Framer Motion
+- React.js
+- Gatsby.js
