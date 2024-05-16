@@ -22,25 +22,18 @@ if (!spaceId || !accessToken) {
 }
 
 module.exports = {
-  /* Your site config here */
   graphqlTypegen: true,
   siteMetadata: {
     title: `Luigi Derson Portfolio`,
-    description: `Luigi Derson, Front End Developer and UI/UX Designer based in Manchester, UK.`,
+    description: `Luigi Derson, Software Engineer based in Manchester, UK.`,
     author: `@luigiderson`,
-    url: `https://www.luigiderson.com`,
+    url: `https://portfolio-1f4.pages.dev`,
     image: {
       src: `/images/luigi-portrait.jpg`,
       width: 500,
       height: 500,
     },
-    keywords: [
-      'Front End Developer',
-      'UX Developer',
-      'UI Designer',
-      'React Developer',
-      'Vue Developer',
-    ],
+    keywords: ['Front End Developer', 'Software Engineer', 'React Developer'],
   },
   plugins: [
     {

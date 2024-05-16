@@ -10,7 +10,7 @@ Hey everyone, I'm Luigi Sanchez. This is my portfolio website built with React, 
 - Less is more
 - Atomic design system
 
-#### Interested links
+#### Inspiration sources
 
 - [Square gif](https://www.pinterest.es/pin/403424079119628492/)
 - [Cube gif](https://www.pinterest.es/pin/421860690098676535/)
@@ -27,3 +27,4 @@ Hey everyone, I'm Luigi Sanchez. This is my portfolio website built with React, 
 - Animation Library: Framer Motion
 - React.js
 - Gatsby.js
+- Contentful CMS
