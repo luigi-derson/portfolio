@@ -7,7 +7,7 @@ import ColorSwitcher from './ColorSwitcher'
 
 export const HEADER_HEIGHT = 78
 
-const NavBar = () => {
+export const NavBar = () => {
   const [colorMode] = useColorMode()
   return (
     <x.header
@@ -51,5 +51,3 @@ const NavBar = () => {
     </x.header>
   )
 }
-
-export default NavBar

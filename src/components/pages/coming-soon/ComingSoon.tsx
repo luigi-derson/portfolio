@@ -1,45 +1,34 @@
+import { x } from '@xstyled/styled-components'
 import { MarkGithubIcon, MailIcon, PeopleIcon } from '@primer/styled-octicons'
-import { useStaticQuery, graphql } from 'gatsby'
+import { StaticImage } from 'gatsby-plugin-image'
 
 import { Heading } from '@components/atoms/Heading'
-import logoSVG from './assets/luigi-derson-logo.svg'
-
 import { Text } from '@components/atoms/Text'
-import { x } from '@xstyled/styled-components'
 import { Container } from '@components/molecules/Container'
 
+import logoSVG from './assets/luigi-derson-logo.svg'
+
 export const ComingSoon = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      desktop: file(
-        relativePath: { eq: "pawel-czerwinski-GHLapgsw0dg-unsplash.jpg" }
-      ) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 1920) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `)
-
-  const imgData = data.desktop.childImageSharp.fluid
-
-  const backgroundFluidImageStack = [
-    `url(${imgData.srcWebp})`,
-    `linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)`,
-  ]
-
   return (
-    <x.div
-      backgroundImage={backgroundFluidImageStack.join(',')}
-      h={1}
-      display="flex"
-      flexDirection="column"
-      backgroundPosition="center"
-      backgroundRepeat="no-repeat"
-      backgroundSize="cover"
-    >
+    <x.div h="calc(100vh - 86.39px)" display="flex" flexDirection="column">
+      <StaticImage
+        style={{
+          position: 'fixed',
+          height: '100%',
+          width: '100%',
+          top: 0,
+          left: 0,
+          zIndex: -1,
+          opacity: 0.65,
+          background:
+            'linear-gradient(0deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)',
+        }}
+        src="./assets/pawel-czerwinski-GHLapgsw0dg-unsplash.jpg"
+        alt="Pawel Czerwinski Unsplash"
+        layout="fullWidth"
+        formats={['auto', 'webp', 'avif']}
+      />
+
       <Container textAlign="center" flexGrow={2}>
         <x.div
           display="flex"
