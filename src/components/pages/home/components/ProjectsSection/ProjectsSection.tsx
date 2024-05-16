@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import { IGatsbyImageData, getImage } from 'gatsby-plugin-image'
 import { useStaticQuery, graphql } from 'gatsby'
 import { x } from '@xstyled/styled-components'
@@ -20,13 +21,13 @@ export const ProjectsSection = () => {
           raw
         }
       }
-      allContentfulProject {
+      allContentfulProject(sort: { fields: order, order: ASC }) {
         nodes {
           id
           title
           images {
             gatsbyImageData(
-              width: 800
+              width: 1000
               placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
             )
@@ -46,12 +47,6 @@ export const ProjectsSection = () => {
     }
   `)
 
-  let image: IGatsbyImageData | undefined
-  if (data.allContentfulProject?.nodes?.[0]?.images?.[0]) {
-    // @ts-ignore
-    image = getImage(data.allContentfulProject.nodes[0].images[0])
-  }
-
   return (
     <x.section>
       <Container>
@@ -61,22 +56,39 @@ export const ProjectsSection = () => {
               // @ts-ignore
               renderRichText(data.contentfulSection.content, rendererOptions)}
           </x.div>
-          <x.div display="flex" mt={4}>
+          <x.div display="flex" mt={4} gap={4}>
             {data.allContentfulProject.nodes.map(project => {
+              let image: IGatsbyImageData | undefined
               const alt = project.images?.[0]?.title ?? project.title
+              const firstImage = project.images?.[0]
+              if (firstImage) {
+                // @ts-ignore
+                image = getImage(firstImage)
+              }
+              const Wrapper = firstImage?.url ? x.a : Fragment
               return (
-                <x.div
-                  key={project.id}
-                  w={{ _: '100%', md: '50%', lg: '33.33%' }}
-                >
+                <x.div key={project.id} w={{ _: '100%', md: '50%' }}>
                   {image && (
-                    <Image
-                      image={image}
-                      alt={alt ?? ''}
-                      border="thin"
-                      borderColor="borders"
-                      boxShadow="default"
-                    />
+                    <Wrapper
+                      {...(firstImage?.url && {
+                        href: firstImage?.url,
+                        target: '_blank',
+                        rel: 'noopener noreferrer',
+                        display: 'block',
+                      })}
+                    >
+                      <Image
+                        image={image}
+                        alt={alt ?? ''}
+                        border="thin"
+                        borderColor="borders"
+                        objectPosition="left"
+                        boxShadow="default"
+                        style={{
+                          aspectRatio: '1/1',
+                        }}
+                      />
+                    </Wrapper>
                   )}
                   {project.technologies && (
                     <x.div display="flex" mt={4}>
@@ -124,6 +136,7 @@ export const ProjectsSection = () => {
                         fontWeight={500}
                         display="inline-block"
                         mt={4}
+                        fontSize="lg"
                       >
                         {project.link.split('//')[1]}
                         <LinkExternalIcon ml={2} />
