@@ -24,14 +24,14 @@ if (!spaceId || !accessToken) {
 module.exports = {
   graphqlTypegen: true,
   siteMetadata: {
-    title: `Luigi Derson Portfolio`,
-    description: `Luigi Derson, Software Engineer based in Manchester, UK.`,
+    title: `Luigi Sanchez Portfolio`,
+    description: `Luigi Sanchez, Software Engineer based in Manchester, UK.`,
     author: `@luigiderson`,
     url: `https://portfolio-1f4.pages.dev`,
     image: {
-      src: `/images/luigi-portrait.jpg`,
-      width: 500,
-      height: 500,
+      src: `/assets/luigi-derson-logo.png`,
+      width: 336,
+      height: 336,
     },
     keywords: ['Front End Developer', 'Software Engineer', 'React Developer'],
   },
